@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+<title>Formulario</title>
+    <script type="text/javascript">
+        
+        function contarLetras1(valor){
+            var cantidadLetras = 1000 - parseInt(valor.length);
+            document.getElementById("cantidadLetras").innerHTML = cantidadLetras;
+        }
+       
+    </script>
+</head>
+<body>
+<div class="borde">
+
+    <form action="" method="get">
+        <h1>Requerimientos</h1>
+        <p>
+            <label for="tipoRequerimiento">Tipo de Requerimiento:</label>
+            <select name="poblacion" id="población">
+                <option>Petición</option>
+                <option>Queja</option>
+                <option>Reclamo</option>
+            </select>
+        </p>
+        
+        <p>
+            Usuario:<input type="radio" name="tipoUsuario" value="h" required/>
+            <label for="tipoUsuario">Identificado</label>
+            <input type="radio" name="tipoUsuario" value="m"/>Anónimo
+        </p>
+        <p class ="Identificado">
+            Si es usuario Identificado por favor ingresar:
+        </p>
+        <p>
+            Nombre: <input type="text" name="nombre" maxlength="50" />
+        </p>
+        <p>
+            <label for="apellidos">Apellidos:</label> <input type="text" name="apellidos" maxlength="50"/>
+        </p>
+
+        <p>
+            Sexo:<input type="radio" name="sexo" value="h" required/><label for="hombre">Hombre</label>
+            <input type="radio" name="sexo" value="m"/>Mujer
+        </p>
+
+        <p>
+            <label for="correo">Correo: </label><input type="text" name="correo" maxlength="100"/>
+        </p>
+        <p>
+            <label for="descripcion">Hechos: </label> <textarea name="description" class="description" id="description" rows="6" cols="60" oninput="contarLetras1(this.value)" ></textarea >
+                <span id="cantidadLetras"></span>
+        </p>
+        <p>
+            <label for="peticion">Petición: </label> <textarea name="description" class="description" id="description" rows="6" cols="60" ></textarea>
+        </p>
+
+        <p>
+            <input type="submit" name="Enviar"/>
+        </p>
+
+    </form>
+</div>
+
+</body>   
+</html>
